@@ -1,0 +1,29 @@
+{
+  "name": "phosphor-icons",
+  "version": "0.2.8",
+  "description": "A clean and friendly icon family for web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phosphor-icons/phosphor-icons.git"
+  },
+  "keywords": [
+    "icons",
+    "icon-pack",
+    "web",
+    "html",
+    "css",
+    "svg",
+    "svg-icons",
+    "icon-font"
+  ],
+  "author": "rektdeckard",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/phosphor-icons/phosphor-icons/issues"
+  },
+  "homepage": "https://github.com/phosphor-icons/phosphor-icons#readme"
+}
