@@ -1,6 +1,6 @@
 {
   "name": "phosphor-icons",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A clean and friendly icon family for web",
   "main": "src/index.js",
   "files": [
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/phosphor-icons/phosphor-icons/issues"
   },
-  "homepage": "https://github.com/phosphor-icons/phosphor-icons#readme",
+  "homepage": "https://phosphoricons.com",
   "devDependencies": {
     "chalk": "^4.1.0"
   }

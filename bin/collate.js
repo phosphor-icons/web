@@ -3,7 +3,14 @@ const fs = require("fs");
 const path = require("path");
 const chalk = require("chalk");
 
-const { ASSETS_PATH } = require("./index");
+let { ASSETS_PATH } = require("./index");
+
+if (process.argv[2]) {
+  const dest = process.argv[2];
+  if (fs.existsSync(dest) && fs.lstatSync(dest).isDirectory()) {
+    ASSETS_PATH = dest;
+  }
+}
 
 function moveToAndCreateFolderIfNeeded(fileName, folderName) {
   const oldPath = path.join(ASSETS_PATH, fileName);
