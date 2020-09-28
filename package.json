@@ -3,9 +3,12 @@
   "version": "0.2.17",
   "description": "A clean and friendly icon family for web",
   "main": "src/index.js",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "collate": "node ./bin/collate.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/phosphor-icons/phosphor-icons/issues"
   },
-  "homepage": "https://github.com/phosphor-icons/phosphor-icons#readme"
+  "homepage": "https://github.com/phosphor-icons/phosphor-icons#readme",
+  "devDependencies": {
+    "chalk": "^4.1.0"
+  }
 }
