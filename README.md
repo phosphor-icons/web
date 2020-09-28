@@ -1,6 +1,6 @@
 # phosphor-icons
 
-A clear, playful, and adaptable icon family for web. The complete list of icons can be found on [our website](https://phosphoricons.com).
+A clear, playful, and adaptable icon family for web. A complete list of icons can be found on [our website](https://phosphoricons.com).
 
 [![NPM](https://img.shields.io/npm/v/phosphor-icons.svg?style=flat-square)](https://www.npmjs.com/package/phosphor-icons) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com) [![Travis](https://img.shields.io/travis/com/rektdeckard/phosphor-icons.svg?style=flat-square)](https://travis-ci.com/github/rektdeckard/phosphor-icons)
 
@@ -24,11 +24,12 @@ We use a similar approach as many other icon sets out there, providing icons as 
   <body>
     <i class="ph-smiley"></i>
     <i class="ph-heart-fill" style="color: hotpink"></i>
-    <i class="ph-cube-duotone"></i>
+    <i class="ph-cube-thin"></i>
   </body>
 </html>
 ```
-> **Note:** For stability, you may choose to source a specific version of Phosphor by adding the version to the script URL, for example: `https://unpkg.com/phosphor-icons@0.2.18`. The CDN supports version ranges.
+
+> **Note:** For stability, you may choose to source a specific version of Phosphor by adding the version to the script URL, for example: `https://unpkg.com/phosphor-icons@0.5.0`. The CDN supports version ranges.
 
 ### Styling
 
@@ -54,6 +55,12 @@ Since the icons are just text under the hood, they can be colored and styled wit
 ```
 
 > **Note:** Overriding the `font-family`, `font-style`, `font-weight`, `font-variant`, or `text-transform` may break the icons and render unprintable characters. Don't do it.
+
+> **Note:** The `duotone` weight is not yet available for this implementation, as fonts do not support baked-in alpha/opacity. In future we plan to move to an SVG-based approach with full support for all icon weights.
+
+## Related Projects
+- [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
+- [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
 
 ## License
 
