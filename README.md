@@ -64,4 +64,4 @@ Since the icons are just text under the hood, they can be colored and styled wit
 
 ## License
 
-GPL-3.0 © [Phosphor Icons](https://github.com/phosphor-icons)
+MIT © [Phosphor Icons](https://github.com/phosphor-icons)
