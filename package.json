@@ -1,6 +1,6 @@
 {
   "name": "phosphor-icons",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "A clean and friendly icon family for web",
   "main": "src/index.js",
   "files": [
