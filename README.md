@@ -1,3 +1,5 @@
+<img src="/meta/phosphor-mark-tight-yellow.png" width="192" align="right" />
+
 # phosphor-icons
 
 A clear, playful, and adaptable icon family for web. A complete list of icons can be found on [our website](https://phosphoricons.com).
