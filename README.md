@@ -2,7 +2,7 @@
 
 # phosphor-icons
 
-A clear, playful, and adaptable icon family for web. A complete list of icons can be found on [our website](https://phosphoricons.com).
+Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
 [![NPM](https://img.shields.io/npm/v/phosphor-icons.svg?style=flat-square)](https://www.npmjs.com/package/phosphor-icons) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com) [![Travis](https://img.shields.io/travis/com/rektdeckard/phosphor-icons.svg?style=flat-square)](https://travis-ci.com/github/rektdeckard/phosphor-icons)
 
