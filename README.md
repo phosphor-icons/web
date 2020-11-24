@@ -31,7 +31,7 @@ We use a similar approach as many other icon sets out there, providing icons as 
 </html>
 ```
 
-> **Note:** For stability, you may choose to source a specific version of Phosphor by adding the version to the script URL, for example: `https://unpkg.com/phosphor-icons@0.5.0`. The CDN supports version ranges.
+> **Note:** For stability, you may choose to source a specific version of Phosphor by adding the version to the script URL, for example: `https://unpkg.com/phosphor-icons@1.1.0`. The CDN supports version ranges.
 
 ### Styling
 
