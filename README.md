@@ -60,6 +60,23 @@ Since the icons are just text under the hood, they can be colored and styled wit
 
 > **Note:** The `duotone` weight is not yet available for this implementation, as fonts do not support baked-in alpha/opacity. In future we plan to move to an SVG-based approach with full support for all icon weights.
 
+### Ligatures
+
+The icon font now supports ligatures, meaning that in any text using `font-family: "Phosphor"`, writing the name of an icon (without the `ph-` prefix) will convert to the corresponding icon. The largest possible string will be matched, meaning you can use any available weight, and print multiple icons without separating with spaces or other characters if you choose.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+  </head>
+  <body>
+    <!-- Renders as sword and shield icons -->
+    <p style="font-family: Phosphor">sword-fill shield</p>
+  </body>
+</html>
+```
+
 ## Related Projects
 - [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
 - [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
