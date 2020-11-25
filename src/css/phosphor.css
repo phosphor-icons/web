@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'Phosphor';
   src:
-    url('https://unpkg.com/phosphor-icons@1.1.0/src/font/Phosphor.ttf?cy6zrr') format('truetype'),
-    url('https://unpkg.com/phosphor-icons@1.1.0/src/font/Phosphor.woff?cy6zrr') format('woff'),
-    url('https://unpkg.com/phosphor-icons@1.1.0/src/font/Phosphor.svg?cy6zrr#Phosphor') format('svg');
+    url('https://unpkg.com/phosphor-icons@1.1.1/src/font/Phosphor.ttf?ze6tdo') format('truetype'),
+    url('https://unpkg.com/phosphor-icons@1.1.1/src/font/Phosphor.woff?ze6tdo') format('woff'),
+    url('https://unpkg.com/phosphor-icons@1.1.1/src/font/Phosphor.svg?ze6tdo#Phosphor-Icons') format('svg');
   /* src:
     url('../font/Phosphor.ttf?smubu4') format('truetype'),
     url('../font/Phosphor.woff?smubu4') format('woff'),
@@ -83,6 +83,12 @@
 .ph-10x { font-size: 10em; }
 .ph-fw { text-align: center; width: 1.25em; }
 
+.ph-cloud-moon-light:before {
+  content: "\f1df";
+}
+.ph-cloud-moon-thin:before {
+  content: "\f49b";
+}
 .ph-activity-fill:before {
   content: "\e900";
 }
@@ -6896,9 +6902,6 @@
 .ph-cloud-lightning-light:before {
   content: "\f1de";
 }
-.ph-cloud-moon-light:before {
-  content: "\f1df";
-}
 .ph-cloud-rain-light:before {
   content: "\f1e0";
 }
@@ -8941,9 +8944,6 @@
 }
 .ph-cloud-lightning-thin:before {
   content: "\f49a";
-}
-.ph-cloud-moon-thin:before {
-  content: "\f49b";
 }
 .ph-cloud-rain-thin:before {
   content: "\f49c";
