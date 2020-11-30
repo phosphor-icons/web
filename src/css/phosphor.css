@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'Phosphor';
   src:
-    url('https://unpkg.com/phosphor-icons@1.1.2/src/font//Phosphor.ttf?hfdspq') format('truetype'),
-    url('https://unpkg.com/phosphor-icons@1.1.2/src/font/Phosphor.woff?hfdspq') format('woff'),
-    url('https://unpkg.com/phosphor-icons@1.1.2/src/font/Phosphor.svg?hfdspq#Phosphor') format('svg');
+    url('https://unpkg.com/phosphor-icons@1.1.3/src/font//Phosphor.ttf?hfdspq') format('truetype'),
+    url('https://unpkg.com/phosphor-icons@1.1.3/src/font/Phosphor.woff?hfdspq') format('woff'),
+    url('https://unpkg.com/phosphor-icons@1.1.3/src/font/Phosphor.svg?hfdspq#Phosphor') format('svg');
   /* src:
     url('../font/Phosphor.ttf?smubu4') format('truetype'),
     url('../font/Phosphor.woff?smubu4') format('woff'),
@@ -22,6 +22,10 @@
   }
 }
 */
+[class^="ph-"],
+[class*=" ph-"] {
+  display: inline-flex;
+}
 
 [class^="ph-"]:before,
 [class*=" ph-"]:before {
