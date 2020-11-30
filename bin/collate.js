@@ -26,7 +26,7 @@ function moveToAndCreateFolderIfNeeded(fileName, folderName) {
 }
 
 function move(oldPath, newPath) {
-  fs.rename(oldPath, newPath, err => {
+  fs.rename(oldPath, newPath, (err) => {
     if (err) {
       if (err.code === "EXDEV") {
         console.error(
@@ -51,7 +51,7 @@ function move(oldPath, newPath) {
     readStream.on("error", callback);
     writeStream.on("error", callback);
 
-    readStream.on("close", function() {
+    readStream.on("close", function () {
       fs.unlink(oldPath, callback);
     });
 
@@ -63,7 +63,7 @@ function move(oldPath, newPath) {
 function collate() {
   const files = fs.readdirSync(ASSETS_PATH, "utf-8");
 
-  files.forEach(file => {
+  files.forEach((file) => {
     // Only SVGs!
     if (!file.match(/.*\.svg$/)) return;
 
