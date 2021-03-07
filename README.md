@@ -31,7 +31,7 @@ We use a similar approach as many other icon sets out there, providing icons as 
 </html>
 ```
 
-> **Note:** For stability, you may choose to source a specific version of Phosphor by adding the version to the script URL, for example: `https://unpkg.com/phosphor-icons@1.1.0`. The CDN supports version ranges.
+> **Note:** For stability, you may choose to source a specific version of Phosphor by adding the version to the script URL, for example: `https://unpkg.com/phosphor-icons@1.2.0`. The CDN supports version ranges.
 
 ### Styling
 
@@ -78,8 +78,11 @@ The icon font now supports ligatures, meaning that in any text using `font-famil
 ```
 
 ## Related Projects
+
 - [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
 - [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
+- [phosphor-flutter](https://github.com/phosphor-icons/phosphor-flutter) ▲ Phosphor IconData library for Flutter
+- [phosphor-webcomponents](https://github.com/phosphor-icons/phosphor-webcomponents) ▲ Phosphor icons as Web Components
 - [phosphor-figma](https://github.com/phosphor-icons/phosphor-figma) ▲ Phosphor icons Figma plugin
 
 ## License
