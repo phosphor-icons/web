@@ -38,22 +38,59 @@ We use a similar approach as many other icon sets out there, providing icons as 
 Since the icons are just text under the hood, they can be colored and styled with CSS like any other font, including `font-size`, `color`, etc. We include several helper classes to provide easy sizing if you need it:
 
 ```css
-.ph-xxs { font-size: 0.5em; }
-.ph-xs { font-size: 0.75em; }
-.ph-sm { font-size: 0.875em; }
-.ph-lg { font-size: 1.3333em; line-height: 0.75em; vertical-align: -0.0667em; }
-.ph-xl { font-size: 1.5em; line-height: 0.6666em; vertical-align: -0.075em; }
-.ph-1x { font-size: 1em; }
-.ph-2x { font-size: 2em; }
-.ph-3x { font-size: 3em; }
-.ph-4x { font-size: 4em; }
-.ph-5x { font-size: 5em; }
-.ph-6x { font-size: 6em; }
-.ph-7x { font-size: 7em; }
-.ph-8x { font-size: 8em; }
-.ph-9x { font-size: 9em; }
-.ph-10x { font-size: 10em; }
-.ph-fw { text-align: center; width: 1.25em; }
+.ph-xxs {
+  font-size: 0.5em;
+}
+.ph-xs {
+  font-size: 0.75em;
+}
+.ph-sm {
+  font-size: 0.875em;
+}
+.ph-lg {
+  font-size: 1.3333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+.ph-xl {
+  font-size: 1.5em;
+  line-height: 0.6666em;
+  vertical-align: -0.075em;
+}
+.ph-1x {
+  font-size: 1em;
+}
+.ph-2x {
+  font-size: 2em;
+}
+.ph-3x {
+  font-size: 3em;
+}
+.ph-4x {
+  font-size: 4em;
+}
+.ph-5x {
+  font-size: 5em;
+}
+.ph-6x {
+  font-size: 6em;
+}
+.ph-7x {
+  font-size: 7em;
+}
+.ph-8x {
+  font-size: 8em;
+}
+.ph-9x {
+  font-size: 9em;
+}
+.ph-10x {
+  font-size: 10em;
+}
+.ph-fw {
+  text-align: center;
+  width: 1.25em;
+}
 ```
 
 > **Note:** Overriding the `font-family`, `font-style`, `font-weight`, `font-variant`, or `text-transform` may break the icons and render unprintable characters. Don't do it.
@@ -79,11 +116,13 @@ The icon font now supports ligatures, meaning that in any text using `font-famil
 
 ## Related Projects
 
+- [phosphor-home](https://github.com/phosphor-icons/phosphor-home) ▲ Phosphor homepage and general info
 - [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
 - [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
 - [phosphor-flutter](https://github.com/phosphor-icons/phosphor-flutter) ▲ Phosphor IconData library for Flutter
 - [phosphor-webcomponents](https://github.com/phosphor-icons/phosphor-webcomponents) ▲ Phosphor icons as Web Components
 - [phosphor-figma](https://github.com/phosphor-icons/phosphor-figma) ▲ Phosphor icons Figma plugin
+- [phosphor-sketch](https://github.com/phosphor-icons/phosphor-sketch) ▲ Phosphor icons Sketch plugin
 
 ## License
 
