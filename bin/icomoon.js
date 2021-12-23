@@ -15,7 +15,7 @@ const WEIGHTS = new Set(["thin", "light", "regular", "bold", "fill"]);
 const IcoMoon = {
   IcoMoonType: "selection",
   icons: [],
-  height: 1024,
+  height: 256,
   metadata: {
     name: "Phosphor",
     url: "https://phosphoricons.com",
