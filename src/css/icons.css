@@ -17,9 +17,13 @@ Generated using nucleoapp.com
 /*------------------------
 	base class definition
 -------------------------*/
+[class^="ph-"],
+[class*=" ph-"] {
+  display: inline-flex;
+}
+
 [class^="ph-"]:before,
 [class*=" ph-"]:before {
-  display: inline-block;
   font: normal normal normal 1em/1 "Phosphor";
   color: inherit;
   flex-shrink: 0;
