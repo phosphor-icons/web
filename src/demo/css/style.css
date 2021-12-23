@@ -258,13 +258,21 @@ ul input {
 icons
 
 -------------------------------- */
+[class^="ph-"],
+[class*=" ph-"] {
+  display: inline-flex;
+}
+
 [class^="ph-"]:before,
 [class*=" ph-"]:before {
-  color: crimson;
-  display: inline-block;
-  font: normal normal normal 32px/1 "Phosphor";
+  font: normal normal normal 1em/1 "Phosphor";
+  color: inherit;
+  flex-shrink: 0;
   speak: none;
+  line-height: 1;
   text-transform: none;
+  text-decoration: inherit;
+  text-align: center;
   /* Better Font Rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

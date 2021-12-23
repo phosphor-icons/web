@@ -29,6 +29,8 @@ Generated using nucleoapp.com
   flex-shrink: 0;
   speak: none;
   text-transform: none;
+  text-decoration: inherit;
+  text-align: center;
   /* Better Font Rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
