@@ -13,7 +13,7 @@ main();
 
 async function main() {
   exec(
-    "git submodule update --remote --init --recursive",
+    "git submodule update --remote --init --force --recursive",
     async (err, _stdout, stderr) => {
       if (err) {
         console.error(`${chalk.inverse.red(" ERR ")} ${err.message}`);
@@ -106,14 +106,14 @@ async function transformDuotoneStylesheet() {
   const remappedCSS = css
     .replace(/ \.path1:before/g, ":before")
     .replace(/ \.path2:before/g, ":after")
-    .replace(/color: rgb\(0, 0, 0\);\n/g, "");
+    .replace(/color: rgb.*;\n/g, "");
 
-  // if (remappedCSS.includes("path3")) {
-  //   console.error(
-  //     `${chalk.inverse.red(" FAIL ")} Some duotone icons have mutiple paths`
-  //   );
-  //   process.exit(1);
-  // }
+  if (remappedCSS.includes("path3")) {
+    console.error(
+      `${chalk.inverse.red(" FAIL ")} Some duotone icons have mutiple paths`
+    );
+    process.exit(1);
+  }
 
   fs.writeFileSync(duotoneCSSPath, remappedCSS);
 }

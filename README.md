@@ -39,7 +39,7 @@ We use a similar approach as many other icon sets out there, providing icons as 
 
 ### Weights
 
-Phosphor Icons come in 6 weights: `regular`, `thin`, `light`, `bold`, `fill`, and `duotone`. In order to use a weight, you must include a link to its stylesheet, and use the appropriate weight class on the icon:
+Phosphor Icons come in 6 weights: `regular`, `thin`, `light`, `bold`, `fill`, and `duotone`. In order to use a weight, you must include a link to its stylesheet, and use the appropriate weight class on the icon (the `regular` weight uses `.ph` instead of `.ph-regular`):
 
 ```html
 <link
@@ -61,8 +61,10 @@ If you intend to use all 6 weights, they can be made available by including the 
 <script src="https://unpkg.com/@phosphor-icons/web@2.0.0"></script>
 ...
 <i class="ph-light ph-address-book"></i>
-<i class="ph-fill ph-sunglasses"></i>
+<i class="ph ph-sunglasses"></i>
 ```
+
+> **NOTE:** Though assets will be cached for subsequent loads, this will bring in around 3MB of fonts and CSS, and may have impact on page load speed.
 
 ### Modules
 
@@ -76,8 +78,6 @@ $ yarn add @phosphor-icons/web
 import "@phosphor-icons/web/light";
 import "@phosphor-icons/web/bold";
 ```
-
-> **NOTE:** Though assets will be cached for subsequent loads, this will bring in around 3MB of fonts and CSS, and may have impact on page load speed.
 
 ### Styling
 
@@ -102,7 +102,7 @@ Since the icons are just text under the hood, they can be colored and styled wit
 
 > **Note:** Overriding the `font-family`, `font-style`, `font-weight`, `font-variant`, or `text-transform` may break the icons and render unprintable characters. Don't do it. Additionally, all weights use the `:before` pseudoelement to inject the font glyph, so overriding this property in icon classes can break them. The `duotone` weight also uses the `:after` pseudoelement, so it is best not to modify either when styling icons.
 
-### Ligatures
+<!-- ### Ligatures
 
 All weights aside from `duotone` support ligatures, meaning that in any text using supported weight classes, writing the name of an icon (without the `ph-` prefix) will convert to the corresponding icon. The largest possible string will be matched, meaning you can use any available weight, and print multiple icons without separating with spaces or other characters if you choose.
 
@@ -117,11 +117,10 @@ All weights aside from `duotone` support ligatures, meaning that in any text usi
     />
   </head>
   <body>
-    <!-- Renders as sword and shield icons -->
     <p class="ph-bold">sword shield</p>
   </body>
 </html>
-```
+``` -->
 
 ## Our Related Projects
 
