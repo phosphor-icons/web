@@ -1496,7 +1496,7 @@
 .ph-bold.ph-file-csv:before {
   content: "\eaea";
 }
-.ph-bold.ph-file-dashed:before {
+.ph-bold.ph-file-dashed:before, .ph-bold.ph-file-dotted:before {
   content: "\eaeb";
 }
 .ph-bold.ph-file-doc:before {
@@ -1520,7 +1520,7 @@
 .ph-bold.ph-file-lock:before {
   content: "\eaf2";
 }
-.ph-bold.ph-file-magnifying-glass:before {
+.ph-bold.ph-file-magnifying-glass:before, .ph-bold.ph-file-search:before {
   content: "\eaf3";
 }
 .ph-bold.ph-file-minus:before {
@@ -1661,7 +1661,7 @@
 .ph-bold.ph-folder:before {
   content: "\eb21";
 }
-.ph-bold.ph-folder-dashed:before {
+.ph-bold.ph-folder-dashed:before, .ph-bold.ph-folder-dotted:before {
   content: "\eb22";
 }
 .ph-bold.ph-folder-lock:before {
@@ -1694,7 +1694,7 @@
 .ph-bold.ph-folder-simple:before {
   content: "\eb2c";
 }
-.ph-bold.ph-folder-simple-dashed:before {
+.ph-bold.ph-folder-simple-dashed:before, .ph-bold.ph-folder-simple-dotted:before {
   content: "\eb2d";
 }
 .ph-bold.ph-folder-simple-lock:before {
@@ -2783,7 +2783,7 @@
 .ph-bold.ph-projector-screen-chart:before {
   content: "\ec97";
 }
-.ph-bold.ph-pulse:before {
+.ph-bold.ph-pulse:before, .ph-bold.ph-activity:before {
   content: "\ec98";
 }
 .ph-bold.ph-push-pin:before {
@@ -2912,16 +2912,16 @@
 .ph-bold.ph-scroll:before {
   content: "\ecc2";
 }
-.ph-bold.ph-seal:before {
+.ph-bold.ph-seal:before, .ph-bold.ph-circle-wavy:before {
   content: "\ecc3";
 }
-.ph-bold.ph-seal-check:before {
+.ph-bold.ph-seal-check:before, .ph-bold.ph-circle-wavy-check:before {
   content: "\ecc4";
 }
-.ph-bold.ph-seal-question:before {
+.ph-bold.ph-seal-question:before, .ph-bold.ph-circle-wavy-question:before {
   content: "\ecc5";
 }
-.ph-bold.ph-seal-warning:before {
+.ph-bold.ph-seal-warning:before, .ph-bold.ph-circle-wavy-warning:before {
   content: "\ecc6";
 }
 .ph-bold.ph-selection-all:before {
@@ -3374,7 +3374,7 @@
 .ph-bold.ph-text-a-underline:before {
   content: "\ed5c";
 }
-.ph-bold.ph-text-b:before {
+.ph-bold.ph-text-b:before, .ph-bold.ph-text-bolder:before {
   content: "\ed5d";
 }
 .ph-bold.ph-textbox:before {

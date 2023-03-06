@@ -1493,7 +1493,7 @@
 .ph-fill.ph-file-csv:before {
   content: "\eae9";
 }
-.ph-fill.ph-file-dashed:before {
+.ph-fill.ph-file-dashed:before, .ph-fill.ph-file-dotted:before {
   content: "\eaea";
 }
 .ph-fill.ph-file-doc:before {
@@ -1520,7 +1520,7 @@
 .ph-fill.ph-file-lock:before {
   content: "\eaf2";
 }
-.ph-fill.ph-file-magnifying-glass:before {
+.ph-fill.ph-file-magnifying-glass:before, .ph-fill.ph-file-search:before {
   content: "\eaf3";
 }
 .ph-fill.ph-file-minus:before {
@@ -1658,7 +1658,7 @@
 .ph-fill.ph-flying-saucer:before {
   content: "\eb20";
 }
-.ph-fill.ph-folder-dashed:before {
+.ph-fill.ph-folder-dashed:before, .ph-fill.ph-folder-dotted:before {
   content: "\eb21";
 }
 .ph-fill.ph-folder:before {
@@ -1691,7 +1691,7 @@
 .ph-fill.ph-folders:before {
   content: "\eb2b";
 }
-.ph-fill.ph-folder-simple-dashed:before {
+.ph-fill.ph-folder-simple-dashed:before, .ph-fill.ph-folder-simple-dotted:before {
   content: "\eb2c";
 }
 .ph-fill.ph-folder-simple:before {
@@ -2783,7 +2783,7 @@
 .ph-fill.ph-projector-screen:before {
   content: "\ec97";
 }
-.ph-fill.ph-pulse:before {
+.ph-fill.ph-pulse:before, .ph-fill.ph-activity:before {
   content: "\ec98";
 }
 .ph-fill.ph-push-pin:before {
@@ -2912,16 +2912,16 @@
 .ph-fill.ph-scroll:before {
   content: "\ecc2";
 }
-.ph-fill.ph-seal-check:before {
+.ph-fill.ph-seal-check:before, .ph-fill.ph-circle-wavy-check:before {
   content: "\ecc3";
 }
-.ph-fill.ph-seal:before {
+.ph-fill.ph-seal:before, .ph-fill.ph-circle-wavy:before {
   content: "\ecc4";
 }
-.ph-fill.ph-seal-question:before {
+.ph-fill.ph-seal-question:before, .ph-fill.ph-circle-wavy-question:before {
   content: "\ecc5";
 }
-.ph-fill.ph-seal-warning:before {
+.ph-fill.ph-seal-warning:before, .ph-fill.ph-circle-wavy-warning:before {
   content: "\ecc6";
 }
 .ph-fill.ph-selection-all:before {
@@ -3374,7 +3374,7 @@
 .ph-fill.ph-text-a-underline:before {
   content: "\ed5c";
 }
-.ph-fill.ph-text-b:before {
+.ph-fill.ph-text-b:before, .ph-fill.ph-text-bolder:before {
   content: "\ed5d";
 }
 .ph-fill.ph-textbox:before {

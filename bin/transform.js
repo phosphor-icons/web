@@ -5,6 +5,7 @@ const chalk = require("chalk");
 const { exec } = require("child_process");
 
 const { CORE_PATH, SRC_PATH } = require("./index");
+const { ALIASES } = require("../core/bin");
 
 const icons = {};
 const weights = ["thin", "light", "regular", "bold", "fill", "duotone"];
@@ -31,6 +32,7 @@ async function main() {
 
       loadWeights();
       await transformDuotoneStylesheet();
+      await includeAliases();
     }
   );
 }
@@ -116,4 +118,27 @@ async function transformDuotoneStylesheet() {
   }
 
   fs.writeFileSync(duotoneCSSPath, remappedCSS);
+}
+
+async function includeAliases() {
+  for (const weight of weights) {
+    const stylesheetPath = path.join(SRC_PATH, `./${weight}/style.css`);
+    let css = fs.readFileSync(stylesheetPath).toString("utf-8");
+
+    Object.entries(ALIASES).forEach(([name, alias]) => {
+      const expr = new RegExp(
+        `\.ph${
+          weight === "regular" ? "" : `-${weight}`
+        }.ph-${name}:(before|after)`,
+        "g"
+      );
+
+      css = css.replace(
+        expr,
+        (match) => `${match}, ${match.replace(name, alias)}`
+      );
+    });
+
+    fs.writeFileSync(stylesheetPath, css);
+  }
 }

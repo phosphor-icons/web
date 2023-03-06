@@ -1493,7 +1493,7 @@
 .ph-thin.ph-file-csv:before {
   content: "\eae9";
 }
-.ph-thin.ph-file-dashed:before {
+.ph-thin.ph-file-dashed:before, .ph-thin.ph-file-dotted:before {
   content: "\eaea";
 }
 .ph-thin.ph-file-doc:before {
@@ -1517,7 +1517,7 @@
 .ph-thin.ph-file-lock:before {
   content: "\eaf1";
 }
-.ph-thin.ph-file-magnifying-glass:before {
+.ph-thin.ph-file-magnifying-glass:before, .ph-thin.ph-file-search:before {
   content: "\eaf2";
 }
 .ph-thin.ph-file-minus:before {
@@ -1658,7 +1658,7 @@
 .ph-thin.ph-flying-saucer:before {
   content: "\eb20";
 }
-.ph-thin.ph-folder-dashed:before {
+.ph-thin.ph-folder-dashed:before, .ph-thin.ph-folder-dotted:before {
   content: "\eb21";
 }
 .ph-thin.ph-folder-lock:before {
@@ -1685,7 +1685,7 @@
 .ph-thin.ph-folder-plus:before {
   content: "\eb29";
 }
-.ph-thin.ph-folder-simple-dashed:before {
+.ph-thin.ph-folder-simple-dashed:before, .ph-thin.ph-folder-simple-dotted:before {
   content: "\eb2a";
 }
 .ph-thin.ph-folder-simple-lock:before {
@@ -2783,7 +2783,7 @@
 .ph-thin.ph-projector-screen:before {
   content: "\ec97";
 }
-.ph-thin.ph-pulse:before {
+.ph-thin.ph-pulse:before, .ph-thin.ph-activity:before {
   content: "\ec98";
 }
 .ph-thin.ph-push-pin-simple-slash:before {
@@ -2912,16 +2912,16 @@
 .ph-thin.ph-scroll:before {
   content: "\ecc2";
 }
-.ph-thin.ph-seal-check:before {
+.ph-thin.ph-seal-check:before, .ph-thin.ph-circle-wavy-check:before {
   content: "\ecc3";
 }
-.ph-thin.ph-seal-question:before {
+.ph-thin.ph-seal-question:before, .ph-thin.ph-circle-wavy-question:before {
   content: "\ecc4";
 }
-.ph-thin.ph-seal:before {
+.ph-thin.ph-seal:before, .ph-thin.ph-circle-wavy:before {
   content: "\ecc5";
 }
-.ph-thin.ph-seal-warning:before {
+.ph-thin.ph-seal-warning:before, .ph-thin.ph-circle-wavy-warning:before {
   content: "\ecc6";
 }
 .ph-thin.ph-selection-all:before {
@@ -3377,7 +3377,7 @@
 .ph-thin.ph-textbox:before {
   content: "\ed5d";
 }
-.ph-thin.ph-text-b:before {
+.ph-thin.ph-text-b:before, .ph-thin.ph-text-bolder:before {
   content: "\ed5e";
 }
 .ph-thin.ph-text-columns:before {

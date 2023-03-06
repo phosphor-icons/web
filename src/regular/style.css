@@ -1496,7 +1496,7 @@
 .ph.ph-file-csv:before {
   content: "\eaea";
 }
-.ph.ph-file-dashed:before {
+.ph.ph-file-dashed:before, .ph.ph-file-dotted:before {
   content: "\eaeb";
 }
 .ph.ph-file-doc:before {
@@ -1520,7 +1520,7 @@
 .ph.ph-file-lock:before {
   content: "\eaf2";
 }
-.ph.ph-file-magnifying-glass:before {
+.ph.ph-file-magnifying-glass:before, .ph.ph-file-search:before {
   content: "\eaf3";
 }
 .ph.ph-file-minus:before {
@@ -1661,7 +1661,7 @@
 .ph.ph-folder:before {
   content: "\eb21";
 }
-.ph.ph-folder-dashed:before {
+.ph.ph-folder-dashed:before, .ph.ph-folder-dotted:before {
   content: "\eb22";
 }
 .ph.ph-folder-lock:before {
@@ -1694,7 +1694,7 @@
 .ph.ph-folder-simple:before {
   content: "\eb2c";
 }
-.ph.ph-folder-simple-dashed:before {
+.ph.ph-folder-simple-dashed:before, .ph.ph-folder-simple-dotted:before {
   content: "\eb2d";
 }
 .ph.ph-folder-simple-lock:before {
@@ -2783,7 +2783,7 @@
 .ph.ph-projector-screen-chart:before {
   content: "\ec97";
 }
-.ph.ph-pulse:before {
+.ph.ph-pulse:before, .ph.ph-activity:before {
   content: "\ec98";
 }
 .ph.ph-push-pin:before {
@@ -2912,16 +2912,16 @@
 .ph.ph-scroll:before {
   content: "\ecc2";
 }
-.ph.ph-seal:before {
+.ph.ph-seal:before, .ph.ph-circle-wavy:before {
   content: "\ecc3";
 }
-.ph.ph-seal-check:before {
+.ph.ph-seal-check:before, .ph.ph-circle-wavy-check:before {
   content: "\ecc4";
 }
-.ph.ph-seal-question:before {
+.ph.ph-seal-question:before, .ph.ph-circle-wavy-question:before {
   content: "\ecc5";
 }
-.ph.ph-seal-warning:before {
+.ph.ph-seal-warning:before, .ph.ph-circle-wavy-warning:before {
   content: "\ecc6";
 }
 .ph.ph-selection:before {
@@ -3374,7 +3374,7 @@
 .ph.ph-text-a-underline:before {
   content: "\ed5c";
 }
-.ph.ph-text-b:before {
+.ph.ph-text-b:before, .ph.ph-text-bolder:before {
   content: "\ed5d";
 }
 .ph.ph-textbox:before {

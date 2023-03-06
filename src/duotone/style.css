@@ -3938,11 +3938,11 @@
   content: "\ecd2";
   margin-left: -1em;
 }
-.ph-duotone.ph-file-dashed:before {
+.ph-duotone.ph-file-dashed:before, .ph-duotone.ph-file-dotted:before {
   content: "\ecd3";
   opacity: 0.2;
 }
-.ph-duotone.ph-file-dashed:after {
+.ph-duotone.ph-file-dashed:after, .ph-duotone.ph-file-dotted:after {
   content: "\ecd4";
   margin-left: -1em;
 }
@@ -4010,11 +4010,11 @@
   content: "\ece4";
   margin-left: -1em;
 }
-.ph-duotone.ph-file-magnifying-glass:before {
+.ph-duotone.ph-file-magnifying-glass:before, .ph-duotone.ph-file-search:before {
   content: "\ece5";
   opacity: 0.2;
 }
-.ph-duotone.ph-file-magnifying-glass:after {
+.ph-duotone.ph-file-magnifying-glass:after, .ph-duotone.ph-file-search:after {
   content: "\ece6";
   margin-left: -1em;
 }
@@ -4378,11 +4378,11 @@
   content: "\ed40";
   margin-left: -1em;
 }
-.ph-duotone.ph-folder-dashed:before {
+.ph-duotone.ph-folder-dashed:before, .ph-duotone.ph-folder-dotted:before {
   content: "\ed41";
   opacity: 0.2;
 }
-.ph-duotone.ph-folder-dashed:after {
+.ph-duotone.ph-folder-dashed:after, .ph-duotone.ph-folder-dotted:after {
   content: "\ed42";
   margin-left: -1em;
 }
@@ -4466,11 +4466,11 @@
   content: "\ed56";
   margin-left: -1em;
 }
-.ph-duotone.ph-folder-simple-dashed:before {
+.ph-duotone.ph-folder-simple-dashed:before, .ph-duotone.ph-folder-simple-dotted:before {
   content: "\ed57";
   opacity: 0.2;
 }
-.ph-duotone.ph-folder-simple-dashed:after {
+.ph-duotone.ph-folder-simple-dashed:after, .ph-duotone.ph-folder-simple-dotted:after {
   content: "\ed58";
   margin-left: -1em;
 }
@@ -7378,11 +7378,11 @@
   content: "\f02e";
   margin-left: -1em;
 }
-.ph-duotone.ph-pulse:before {
+.ph-duotone.ph-pulse:before, .ph-duotone.ph-activity:before {
   content: "\f02f";
   opacity: 0.2;
 }
-.ph-duotone.ph-pulse:after {
+.ph-duotone.ph-pulse:after, .ph-duotone.ph-activity:after {
   content: "\f030";
   margin-left: -1em;
 }
@@ -7722,35 +7722,35 @@
   content: "\f084";
   margin-left: -1em;
 }
-.ph-duotone.ph-seal-check:before {
+.ph-duotone.ph-seal-check:before, .ph-duotone.ph-circle-wavy-check:before {
   content: "\f085";
   opacity: 0.2;
 }
-.ph-duotone.ph-seal-check:after {
+.ph-duotone.ph-seal-check:after, .ph-duotone.ph-circle-wavy-check:after {
   content: "\f086";
   margin-left: -1em;
 }
-.ph-duotone.ph-seal:before {
+.ph-duotone.ph-seal:before, .ph-duotone.ph-circle-wavy:before {
   content: "\f087";
   opacity: 0.2;
 }
-.ph-duotone.ph-seal:after {
+.ph-duotone.ph-seal:after, .ph-duotone.ph-circle-wavy:after {
   content: "\f088";
   margin-left: -1em;
 }
-.ph-duotone.ph-seal-question:before {
+.ph-duotone.ph-seal-question:before, .ph-duotone.ph-circle-wavy-question:before {
   content: "\f089";
   opacity: 0.2;
 }
-.ph-duotone.ph-seal-question:after {
+.ph-duotone.ph-seal-question:after, .ph-duotone.ph-circle-wavy-question:after {
   content: "\f08a";
   margin-left: -1em;
 }
-.ph-duotone.ph-seal-warning:before {
+.ph-duotone.ph-seal-warning:before, .ph-duotone.ph-circle-wavy-warning:before {
   content: "\f08b";
   opacity: 0.2;
 }
-.ph-duotone.ph-seal-warning:after {
+.ph-duotone.ph-seal-warning:after, .ph-duotone.ph-circle-wavy-warning:after {
   content: "\f08c";
   margin-left: -1em;
 }
@@ -8954,11 +8954,11 @@
   content: "\f1b8";
   margin-left: -1em;
 }
-.ph-duotone.ph-text-b:before {
+.ph-duotone.ph-text-b:before, .ph-duotone.ph-text-bolder:before {
   content: "\f1b9";
   opacity: 0.2;
 }
-.ph-duotone.ph-text-b:after {
+.ph-duotone.ph-text-b:after, .ph-duotone.ph-text-bolder:after {
   content: "\f1ba";
   margin-left: -1em;
 }
