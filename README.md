@@ -1,3 +1,5 @@
+> **ATTENTION:** As part of a major update, this package has moved from `phosphor-icons` to `@phosphor-icons/web`. We recommend using the new version, as it has improved performance and significantly smaller bundle size, in addition to having the option to only load the weights you need. Some class names and APIs have changed, so please read the documentation before upgrading. This package will continue to recieve maintenance, but will not be updated with new icons upstream. [Take me to the new version ➜](https://github.com/phosphor-icons/web)
+
 <img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
 
 # phosphor-icons
