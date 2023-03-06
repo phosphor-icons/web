@@ -5,7 +5,7 @@ const chalk = require("chalk");
 const { parse } = require("svgson");
 
 const { version } = require("../package.json");
-const { ASSETS_PATH, CODEPOINTS_PATH, FONTS_PATH } = require("./index");
+const { CORE_PATH, CODEPOINTS_PATH, FONTS_PATH } = require("./index");
 const codePoints = require(CODEPOINTS_PATH);
 
 const [majorVersion, minorVersion] = version.split(".");
@@ -80,7 +80,7 @@ async function main() {
     process.exit(1);
   }
 
-  const weights = fs.readdirSync(ASSETS_PATH, "utf-8");
+  const weights = fs.readdirSync(CORE_PATH, "utf-8");
   if (![...WEIGHTS].every((w) => weights.includes(w))) {
     console.error(
       `${chalk.inverse.red(
@@ -92,12 +92,12 @@ async function main() {
 
   let iconIdx = 0;
   for (const weight of WEIGHTS) {
-    const icons = fs.readdirSync(path.join(ASSETS_PATH, weight));
+    const icons = fs.readdirSync(path.join(CORE_PATH, weight));
     for (const file of icons) {
       const [iconName] = file.split(".");
 
       const svgString = fs
-        .readFileSync(path.join(ASSETS_PATH, weight, file))
+        .readFileSync(path.join(CORE_PATH, weight, file))
         .toString();
 
       // Parse SVG to JSON

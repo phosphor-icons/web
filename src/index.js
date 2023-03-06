@@ -1,6 +1,10 @@
 var head = document.getElementsByTagName("head")[0];
-var link = document.createElement("link");
-link.rel = "stylesheet";
-link.type = "text/css";
-link.href = "https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css";
-head.appendChild(link);
+
+for (weight of ["regular", "thin", "light", "bold", "fill", "duotone"]) {
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.type = "text/css";
+  link.href =
+    "https://unpkg.com/@phosphor-icons/web@2.0.1/src/" + weight + "/style.css";
+  head.appendChild(link);
+}

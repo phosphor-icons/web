@@ -1,19 +1,32 @@
 {
-  "name": "phosphor-icons",
-  "version": "1.4.2",
+  "name": "@phosphor-icons/web",
+  "version": "2.0.1",
   "description": "A clean and friendly icon family for web",
   "main": "src/index.js",
   "files": [
     "src"
   ],
+  "exports": {
+    "./*": "./src/*",
+    "./regular": "./src/regular/style.css",
+    "./thin": "./src/thin/style.css",
+    "./light": "./src/light/style.css",
+    "./bold": "./src/bold/style.css",
+    "./fill": "./src/fill/style.css",
+    "./duotone": "./src/duotone/style.css"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "http-server -o /test",
-    "collate": "node ./bin/collate.js",
+    "transform": "node ./bin/transform.js",
     "icomoon": "node ./bin/icomoon.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phosphor-icons/phosphor-icons.git"
+    "url": "git+https://github.com/phosphor-icons/web.git"
   },
   "keywords": [
     "icons",
@@ -28,7 +41,7 @@
   "author": "rektdeckard",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/phosphor-icons/phosphor-icons/issues"
+    "url": "https://github.com/phosphor-icons/web/issues"
   },
   "homepage": "https://phosphoricons.com",
   "devDependencies": {
