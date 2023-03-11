@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Phosphor-Bold";
-  src: url("./Phosphor-Bold.woff") format("woff"),
+  src: url("./Phosphor-Bold.woff2") format("woff2"),
+    url("./Phosphor-Bold.woff") format("woff"),
     url("./Phosphor-Bold.ttf") format("truetype"),
     url("./Phosphor-Bold.svg#Phosphor-Bold") format("svg");
   font-weight: normal;

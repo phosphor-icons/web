@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Phosphor-Duotone";
-  src: url("./Phosphor-Duotone.woff") format("woff"),
+  src: url("./Phosphor-Duotone.woff2") format("woff2")
+    url("./Phosphor-Duotone.woff") format("woff"),
     url("./Phosphor-Duotone.ttf") format("truetype"),
     url("./Phosphor-Duotone.svg#Phosphor-Duotone") format("svg");
   font-weight: normal;
