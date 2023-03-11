@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Phosphor";
-  src: url("./Phosphor.woff") format("woff"),
+  src: url("./Phosphor.woff2") format("woff2"),
+    url("./Phosphor.woff") format("woff"),
     url("./Phosphor.ttf") format("truetype"),
     url("./Phosphor.svg#Phosphor") format("svg");
   font-weight: normal;
@@ -21,6 +22,75 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.ph-xxs {
+  font-size: 0.5em;
+}
+
+.ph-xs {
+  font-size: 0.75em;
+}
+
+.ph-sm {
+  font-size: 0.875em;
+}
+
+.ph-lg {
+  font-size: 1.3333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.ph-xl {
+  font-size: 1.5em;
+  line-height: 0.6666em;
+  vertical-align: -0.075em;
+}
+
+.ph-1x {
+  font-size: 1em;
+}
+
+.ph-2x {
+  font-size: 2em;
+}
+
+.ph-3x {
+  font-size: 3em;
+}
+
+.ph-4x {
+  font-size: 4em;
+}
+
+.ph-5x {
+  font-size: 5em;
+}
+
+.ph-6x {
+  font-size: 6em;
+}
+
+.ph-7x {
+  font-size: 7em;
+}
+
+.ph-8x {
+  font-size: 8em;
+}
+
+.ph-9x {
+  font-size: 9em;
+}
+
+.ph-10x {
+  font-size: 10em;
+}
+
+.ph-fw {
+  text-align: center;
+  width: 1.25em;
 }
 
 .ph.ph-address-book:before {
