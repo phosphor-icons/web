@@ -26,7 +26,7 @@ We use a similar approach as many other icon sets out there, providing icons as 
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://unpkg.com/@phosphor-icons/web@2.0.2/src/bold/style.css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css"
     />
   </head>
   <body>
@@ -47,7 +47,7 @@ Phosphor Icons come in 6 weights: `regular`, `thin`, `light`, `bold`, `fill`, an
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://unpkg.com/@phosphor-icons/web@2.0.2/src/duotone/style.css"
+  href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css"
 />
 ...
 <i class="ph-duotone ph-baseball"></i>
@@ -60,7 +60,7 @@ The URL format is `https://unpkg.com/@phosphor-icons/web@<VERSION>/src/<WEIGHT>/
 If you intend to use all 6 weights, they can be made available by including the library as a script tag, using the base URL:
 
 ```html
-<script src="https://unpkg.com/@phosphor-icons/web@2.0.2"></script>
+<script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
 ...
 <i class="ph-light ph-address-book"></i>
 <i class="ph ph-sunglasses"></i>
@@ -115,7 +115,7 @@ All weights aside from `duotone` support ligatures, meaning that in any text usi
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://unpkg.com/@phosphor-icons/web@2.0.2/src/bold/style.css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css"
     />
   </head>
   <body>
@@ -141,6 +141,7 @@ All weights aside from `duotone` support ligatures, meaning that in any text usi
 - [phosphor-svelte](https://github.com/haruaki07/phosphor-svelte) ▲ Phosphor icons for Svelte apps
 - [phosphor-r](https://github.com/dreamRs/phosphoricons) ▲ Phosphor icon wrapper for R documents and applications
 - [blade-phosphor-icons](https://github.com/codeat3/blade-phosphor-icons) ▲ Phosphor icons in your Laravel Blade views
+- [wordpress-phosphor-icons-block](https://github.com/robruiz/phosphor-icons-block) ▲ Phosphor icon block for use in WordPress v5.8+
 
 If you've made a port of Phosphor and you want to see it here, just open a PR [here](https://github.com/phosphor-icons/homepage)!
 
