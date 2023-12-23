@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-const fs = require("fs");
-const path = require("path");
-const chalk = require("chalk");
-const { exec } = require("child_process");
+import fs from "fs";
+import path from "path";
+import chalk from "chalk";
+import { exec } from "child_process";
 
-const { CORE_PATH, SRC_PATH } = require("./index");
-const { ALIASES } = require("../core/bin");
+import { CORE_PATH, SRC_PATH } from "./index";
+import { ALIASES } from "../core/bin";
 
 const icons = {};
 const weights = ["thin", "light", "regular", "bold", "fill", "duotone"];

@@ -21,8 +21,8 @@
   },
   "scripts": {
     "test": "http-server -o /test",
-    "transform": "node ./bin/transform.js",
-    "icomoon": "node ./bin/icomoon.js"
+    "transform": "node ./scripts/transform.js",
+    "icomoon": "node ./scripts/icomoon.js"
   },
   "repository": {
     "type": "git",

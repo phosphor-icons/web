@@ -1494,7 +1494,7 @@
 .ph-light.ph-file-csv:before {
   content: "\eae9";
 }
-.ph-light.ph-file-dashed:before, .ph-light.ph-file-dotted:before {
+.ph-light.ph-file-dashed:before, .ph-light.ph-file-dotted:before, .ph-light.ph-file-dotted:before {
   content: "\eaea";
 }
 .ph-light.ph-file-doc:before {
@@ -1521,7 +1521,7 @@
 .ph-light.ph-file-lock:before {
   content: "\eaf2";
 }
-.ph-light.ph-file-magnifying-glass:before, .ph-light.ph-file-search:before {
+.ph-light.ph-file-magnifying-glass:before, .ph-light.ph-file-search:before, .ph-light.ph-file-search:before {
   content: "\eaf3";
 }
 .ph-light.ph-file-minus:before {
@@ -1659,7 +1659,7 @@
 .ph-light.ph-flying-saucer:before {
   content: "\eb20";
 }
-.ph-light.ph-folder-dashed:before, .ph-light.ph-folder-dotted:before {
+.ph-light.ph-folder-dashed:before, .ph-light.ph-folder-dotted:before, .ph-light.ph-folder-dotted:before {
   content: "\eb21";
 }
 .ph-light.ph-folder:before {
@@ -1689,7 +1689,7 @@
 .ph-light.ph-folder-plus:before {
   content: "\eb2a";
 }
-.ph-light.ph-folder-simple-dashed:before, .ph-light.ph-folder-simple-dotted:before {
+.ph-light.ph-folder-simple-dashed:before, .ph-light.ph-folder-simple-dotted:before, .ph-light.ph-folder-simple-dotted:before {
   content: "\eb2b";
 }
 .ph-light.ph-folder-simple:before {
@@ -2784,7 +2784,7 @@
 .ph-light.ph-projector-screen:before {
   content: "\ec97";
 }
-.ph-light.ph-pulse:before, .ph-light.ph-activity:before {
+.ph-light.ph-pulse:before, .ph-light.ph-activity:before, .ph-light.ph-activity:before {
   content: "\ec98";
 }
 .ph-light.ph-push-pin:before {
@@ -2913,16 +2913,16 @@
 .ph-light.ph-scroll:before {
   content: "\ecc2";
 }
-.ph-light.ph-seal-check:before, .ph-light.ph-circle-wavy-check:before {
+.ph-light.ph-seal-check:before, .ph-light.ph-circle-wavy-check:before, .ph-light.ph-circle-wavy-check:before {
   content: "\ecc3";
 }
-.ph-light.ph-seal:before, .ph-light.ph-circle-wavy:before {
+.ph-light.ph-seal:before, .ph-light.ph-circle-wavy:before, .ph-light.ph-circle-wavy:before {
   content: "\ecc4";
 }
-.ph-light.ph-seal-question:before, .ph-light.ph-circle-wavy-question:before {
+.ph-light.ph-seal-question:before, .ph-light.ph-circle-wavy-question:before, .ph-light.ph-circle-wavy-question:before {
   content: "\ecc5";
 }
-.ph-light.ph-seal-warning:before, .ph-light.ph-circle-wavy-warning:before {
+.ph-light.ph-seal-warning:before, .ph-light.ph-circle-wavy-warning:before, .ph-light.ph-circle-wavy-warning:before {
   content: "\ecc6";
 }
 .ph-light.ph-selection-all:before {
@@ -3375,7 +3375,7 @@
 .ph-light.ph-text-a-underline:before {
   content: "\ed5c";
 }
-.ph-light.ph-text-b:before, .ph-light.ph-text-bolder:before {
+.ph-light.ph-text-b:before, .ph-light.ph-text-bolder:before, .ph-light.ph-text-bolder:before {
   content: "\ed5d";
 }
 .ph-light.ph-textbox:before {
