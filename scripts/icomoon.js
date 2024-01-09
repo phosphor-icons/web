@@ -13,20 +13,24 @@ const [majorVersion, minorVersion] = version.split(".");
 const WEIGHTS = new Set(["thin", "light", "regular", "bold", "fill"]);
 
 const IcoMoon = {
+  uid: -1,
   IcoMoonType: "selection",
   icons: [],
   height: 256,
   metadata: {
     name: "Phosphor",
+    lastOpened: 0,
+    created: 1704094527975,
     url: "https://phosphoricons.com",
     designer: "Tobias Fried & Helena Zhang",
     designerURL: "https://phosphoricons.com",
     license: "MIT",
     licenseURL:
-      "https://raw.githubusercontent.com/phosphor-icons/phosphor-home/master/LICENSE",
+      "https://raw.githubusercontent.com/phosphor-icons/homepage/master/LICENSE",
   },
   preferences: {
     showGlyphs: true,
+    showCodes: true,
     showQuickUse: true,
     showQuickUse2: true,
     showSVGs: true,
@@ -43,16 +47,17 @@ const IcoMoon = {
         designerURL: "https://phosphoricons.com",
         license: "MIT",
         licenseURL:
-          "https://raw.githubusercontent.com/phosphor-icons/phosphor-home/master/LICENSE",
+          "https://raw.githubusercontent.com/phosphor-icons/homepage/master/LICENSE",
       },
       metrics: { emSize: 256, baseline: 0, whitespace: 0 },
       embed: false,
       noie8: true,
       ie7: false,
       includeMetadata: true,
-      flutter: true,
+      flutter: false,
       showSelector: true,
-      selector: "i",
+      selector: "class",
+      classSelector: ".ph",
       showMetrics: true,
       showMetadata: true,
       showVersion: true,
@@ -66,15 +71,12 @@ const IcoMoon = {
       classSelector: ".icon",
     },
     historySize: 50,
-    showCodes: true,
     gridSize: 16,
     showLiga: true,
   },
 };
 
-main();
-
-async function main() {
+(async function main() {
   if (!codePoints) {
     console.error(`${chalk.inverse.red(" FAIL ")} codepoints not found`);
     process.exit(1);
@@ -142,7 +144,7 @@ async function main() {
     path.join(FONTS_PATH, "Phosphor.json"),
     JSON.stringify(IcoMoon)
   );
-}
+})();
 
 async function getPaths(iconName, svgString) {
   const { children } = await parse(svgString);
