@@ -1,16 +1,19 @@
 #!/usr/bin/env node
-const fs = require("fs");
-const path = require("path");
-const chalk = require("chalk");
-const { parse } = require("svgson");
+import fs from "node:fs";
+import path from "node:path";
+import chalk from "chalk";
+import { parse } from "svgson";
 
-const { version } = require("../package.json");
-const { CORE_PATH, CODEPOINTS_PATH, FONTS_PATH } = require("./index");
-const codePoints = require(CODEPOINTS_PATH);
+import {
+  CORE_PATH,
+  FONTS_PATH,
+  WEIGHTS,
+  readAssetsFromDisk,
+  verifyIcons,
+} from ".";
+import { version } from "../package.json";
 
-const [majorVersion, minorVersion] = version.split(".");
-
-const WEIGHTS = new Set(["thin", "light", "regular", "bold", "fill"]);
+const [MAJOR_VERSION, MINOR_VERSION] = version.split(".");
 
 const IcoMoon = {
   uid: -1,
@@ -38,8 +41,8 @@ const IcoMoon = {
       prefix: "ph-",
       metadata: {
         fontFamily: "Phosphor",
-        majorVersion,
-        minorVersion,
+        majorVersion: MAJOR_VERSION,
+        minorVersion: MINOR_VERSION,
         fontURL: "https://phosphoricons.com",
         description: "A flexible icon family for everyone",
         copyright: "Phosphor Icons",
@@ -77,20 +80,12 @@ const IcoMoon = {
 };
 
 (async function main() {
-  if (!codePoints) {
-    console.error(`${chalk.inverse.red(" FAIL ")} codepoints not found`);
+  const icons = readAssetsFromDisk();
+  if (!verifyIcons(icons)) {
     process.exit(1);
   }
 
-  const weights = fs.readdirSync(CORE_PATH, "utf-8");
-  if (![...WEIGHTS].every((w) => weights.includes(w))) {
-    console.error(
-      `${chalk.inverse.red(
-        " FAIL "
-      )} assets path does not contain expected structure`
-    );
-    process.exit(1);
-  }
+  Object.entries(icons).forEach(([name, weights], idx) => {});
 
   let iconIdx = 0;
   for (const weight of WEIGHTS) {
@@ -170,3 +165,24 @@ async function getPaths(iconName, svgString) {
 
   return children.map((child) => child.attributes.d);
 }
+
+function createIconSet(id: number, name: string) {
+  return {
+    id,
+    metadata: {
+      name,
+      importSize: {
+        width: 256,
+        height: 256,
+      },
+    },
+    height: 1024,
+    prevSize: 16,
+    colorThemes: [],
+    invisible: false,
+    icons: [],
+    selections: [],
+  };
+}
+
+function createSelection() {}
