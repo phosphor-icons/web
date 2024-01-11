@@ -4,22 +4,143 @@ import path from "node:path";
 import chalk from "chalk";
 import { parse } from "svgson";
 
-import {
-  CORE_PATH,
-  FONTS_PATH,
-  WEIGHTS,
-  readAssetsFromDisk,
-  verifyIcons,
-} from ".";
+import { SRC_PATH, readAssetsFromDisk, verifyIcons } from ".";
+import { icons } from "../core/src";
 import { version } from "../package.json";
 
-const [MAJOR_VERSION, MINOR_VERSION] = version.split(".");
+const [MAJOR_VERSION, MINOR_VERSION] = version.split(".").map(parseInt);
 
-const IcoMoon = {
+const BASE_ATTRS = [{}];
+const DUOTONE_ATTRS = [
+  {
+    fill: "rgb(68, 68, 68)",
+    opacity: 0.2,
+  },
+  {
+    fill: "rgb(68, 68, 68)",
+  },
+];
+const DUOTONE_COLOR_THEMES = [
+  [
+    [0, 0, 0, 1],
+    [68, 68, 68, 1],
+  ],
+];
+const DUOTONE_COLOR_PERMUTATIONS = {
+  "16868681": [
+    {
+      f: 1,
+    },
+    {
+      f: 1,
+    },
+  ],
+};
+
+type IcoMoonGlyphEntry = {
+  id: number;
+  order: number;
+  name: string;
+  prevSize?: number;
+  code?: number;
+  tempChar?: string;
+  ligatures?: string;
+};
+
+type IcoMoonIcon = {
+  id: number;
+  paths: string[];
+  attrs: Record<string, any>[];
+  isMulticolor: boolean;
+  isMulticolor2: boolean;
+  colorPermutations?: Record<string, any>;
+  grid: number;
+  tags: string[];
+};
+
+type IcoMoonSet = {
+  id: number;
+  metadata: {
+    name: string;
+    importSize: {
+      width: number;
+      height: number;
+    };
+  };
+  height: number;
+  prevSize: number;
+  colorThemes?: unknown[];
+  colorThemeIdx?: number;
+  invisible: boolean;
+  icons: IcoMoonIcon[];
+  selection: IcoMoonGlyphEntry[];
+};
+
+type IcoMoonProject = {
+  uid: number;
+  IcoMoonType?: string; // TODO
+  metadata: {
+    name: string;
+    created: number;
+    lastOpened: number;
+    url?: string;
+    designer?: string;
+    designerURL?: string;
+    license?: string;
+    licenseURL?: string;
+  };
+  preferences: {
+    showGlyphs: boolean;
+    showCodes: boolean;
+    showQuickUse: boolean;
+    showQuickUse2: boolean;
+    showSVGs: boolean;
+    fontPref: {
+      prefix: string;
+      metadata: {
+        fontFamily: string;
+        majorVersion: number;
+        minorVersion: number;
+        fontURL: string;
+        description: string;
+        copyright: string;
+        designer: string;
+        designerURL: string;
+        license: string;
+        licenseURL: string;
+      };
+      metrics: { emSize: number; baseline: number; whitespace: number };
+      embed: boolean;
+      noie8: boolean;
+      ie7: boolean;
+      includeMetadata: boolean;
+      flutter: boolean;
+      selector: "class" | "i";
+      classSelector: string;
+      showSelector: boolean;
+      showMetrics: boolean;
+      showMetadata: boolean;
+      showVersion: boolean;
+    };
+    imagePref: {
+      prefix: string;
+      png: boolean;
+      useClassSelector: boolean;
+      color: number;
+      bgColor: number;
+      classSelector: string;
+    };
+    height: number;
+    historySize: number;
+    gridSize: number;
+    showLiga: true;
+  };
+  iconSets: IcoMoonSet[];
+};
+
+const project: IcoMoonProject = {
   uid: -1,
   IcoMoonType: "selection",
-  icons: [],
-  height: 256,
   metadata: {
     name: "Phosphor",
     lastOpened: 0,
@@ -52,7 +173,7 @@ const IcoMoon = {
         licenseURL:
           "https://raw.githubusercontent.com/phosphor-icons/homepage/master/LICENSE",
       },
-      metrics: { emSize: 256, baseline: 0, whitespace: 0 },
+      metrics: { emSize: 1024, baseline: 6.25, whitespace: 50 },
       embed: false,
       noie8: true,
       ie7: false,
@@ -73,100 +194,144 @@ const IcoMoon = {
       bgColor: 16777215,
       classSelector: ".icon",
     },
+    height: 1024,
     historySize: 50,
     gridSize: 16,
     showLiga: true,
   },
+  iconSets: [],
 };
 
 (async function main() {
-  const icons = readAssetsFromDisk();
-  if (!verifyIcons(icons)) {
+  const assets = readAssetsFromDisk();
+  if (!verifyIcons(assets)) {
     process.exit(1);
   }
 
-  Object.entries(icons).forEach(([name, weights], idx) => {});
+  let sets: Record<string, IcoMoonSet> = {
+    regular: createIconSet(0, "Regular"),
+    thin: createIconSet(1, "Thin"),
+    light: createIconSet(2, "Light"),
+    bold: createIconSet(3, "Bold"),
+    fill: createIconSet(4, "Fill"),
+    duotone: createIconSet(5, "Duotone"),
+  };
 
-  let iconIdx = 0;
-  for (const weight of WEIGHTS) {
-    const icons = fs.readdirSync(path.join(CORE_PATH, weight));
-    for (const file of icons) {
-      const [iconName] = file.split(".");
+  let idx = 0;
+  let errors: string[] = [];
 
-      const svgString = fs
-        .readFileSync(path.join(CORE_PATH, weight, file))
-        .toString();
-
-      // Parse SVG to JSON
-      const paths = await getPaths(iconName, svgString);
-      const codePoint = codePoints[`ph-${iconName}`];
-
-      if (!codePoint) {
-        console.error(
-          `${chalk.inverse.red(" FAIL ")} ${iconName} has no codepoint declared`
-        );
-        process.exit(1);
-      }
-
-      IcoMoon.icons.push({
-        icon: {
-          paths,
-          attrs: [{}],
-          isMulticolor: false,
-          isMulticolor2: false,
-          grid: 0,
-          tags: [iconName],
-        },
-        attrs: [{}],
-        properties: {
-          order: iconIdx + 1,
-          id: iconIdx + 1,
-          name: iconName,
-          prevSize: 32,
-          code: codePoint,
-        },
-        setIdx: 0,
-        setId: 0,
-        iconIdx,
-      });
-
-      console.log(`${chalk.inverse.green(" DONE ")} ${iconName}`);
-      iconIdx++;
+  for (const entry of icons) {
+    let weights =
+      assets[entry.name] ?? (entry.alias ? assets[entry.alias!.name] : null);
+    if (!weights) {
+      console.error(
+        `${chalk.inverse.red(" FAIL ")} ${entry.name} not found in assets`
+      );
+      process.exit(1);
     }
+
+    for (const [weight, svgString] of Object.entries(weights)) {
+      const canonicalName =
+        weight === "regular" ? entry.name : `${entry.name}-${weight}`;
+      const canonicalAlias = entry.alias
+        ? weight === "regular"
+          ? entry.alias.name
+          : `${entry.alias.name}-${weight}`
+        : null;
+      try {
+        const paths = await getPaths(canonicalName, svgString);
+        const isMulticolor = weight === "duotone";
+
+        const icon: IcoMoonIcon = {
+          id: idx,
+          paths,
+          grid: 0,
+          attrs: isMulticolor ? DUOTONE_ATTRS : BASE_ATTRS,
+          isMulticolor,
+          isMulticolor2: isMulticolor,
+          tags: [canonicalName],
+          colorPermutations: isMulticolor
+            ? DUOTONE_COLOR_PERMUTATIONS
+            : undefined,
+        };
+        sets[weight].icons.push(icon);
+
+        const selection: IcoMoonGlyphEntry = {
+          id: idx,
+          order: idx,
+          name: canonicalName + (canonicalAlias ? `,${canonicalAlias}` : ""),
+          code: entry.codepoint,
+          tempChar: String.fromCharCode(entry.codepoint),
+          ligatures: weight === "duotone" ? undefined : canonicalName,
+        };
+        sets[weight].selection.push(selection);
+      } catch (e) {
+        errors.push(e.message);
+      }
+    }
+
+    idx++;
+    console.info(`${chalk.inverse.green(" DONE ")} ${entry.name}`);
+  }
+
+  project.iconSets.push(...Object.values(sets));
+
+  if (errors.length > 0) {
+    console.error(
+      `${chalk.inverse.red(" FAIL ")} ${errors.length} errors encountered`
+    );
+
+    console.group();
+    for (const msg of errors) {
+      console.error(msg);
+    }
+    console.groupEnd();
+    process.exit(1);
+  } else {
+    console.info(
+      `${chalk.inverse.green(" DONE ")} ${icons.length} icons processed`
+    );
   }
 
   fs.writeFileSync(
-    path.join(FONTS_PATH, "Phosphor.json"),
-    JSON.stringify(IcoMoon)
+    path.join(SRC_PATH, "Phosphor.json"),
+    JSON.stringify(project)
   );
 })();
 
-async function getPaths(iconName, svgString) {
+async function getPaths(iconName: string, svgString: string) {
   const { children } = await parse(svgString);
 
   if (children.length === 0) {
-    console.error(`${chalk.inverse.red(" FAIL ")} ${iconName} has no elements`);
-    process.exit(1);
+    const error = `${chalk.inverse.red(" FAIL ")} ${iconName} has no elements`;
+    console.error(error);
+    throw new Error(error);
   }
 
   if (!children.every((child) => child.name === "path")) {
-    console.error(
-      `${chalk.inverse.red(" FAIL ")} ${iconName} has non-path elements`
-    );
-    process.exit(1);
+    const error = `${chalk.inverse.red(
+      " FAIL "
+    )} ${iconName} has non-path elements`;
+    console.error(error);
+    throw new Error(error);
   }
 
   if (!children.every((child) => child.children.length === 0)) {
-    console.error(
-      `${chalk.inverse.red(" FAIL ")} ${iconName} has nested elements`
-    );
-    process.exit(1);
+    const error = `${chalk.inverse.red(
+      " FAIL "
+    )} ${iconName} has nested elements`;
+    console.error(error);
+    throw new Error(error);
   }
 
   return children.map((child) => child.attributes.d);
 }
 
-function createIconSet(id: number, name: string) {
+function createIconSet(
+  id: number,
+  name: string,
+  color: boolean = false
+): IcoMoonSet {
   return {
     id,
     metadata: {
@@ -176,13 +341,12 @@ function createIconSet(id: number, name: string) {
         height: 256,
       },
     },
-    height: 1024,
+    height: 256,
     prevSize: 16,
     colorThemes: [],
     invisible: false,
     icons: [],
-    selections: [],
+    selection: [],
+    ...(color ? { colorThemes: DUOTONE_COLOR_THEMES, colorThemeIdx: 0 } : {}),
   };
 }
-
-function createSelection() {}

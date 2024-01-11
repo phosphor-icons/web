@@ -27,7 +27,7 @@ import {
         process.exit(1);
       }
 
-      console.log(
+      console.info(
         `${chalk.inverse.green(" OK ")} Updated submodule @phosphor-icons/core`
       );
 
