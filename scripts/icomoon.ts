@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
+import { exec } from "node:child_process";
 import chalk from "chalk";
 import { parse } from "svgson";
 
@@ -203,99 +204,120 @@ const project: IcoMoonProject = {
 };
 
 (async function main() {
-  const assets = readAssetsFromDisk();
-  if (!verifyIcons(assets)) {
-    process.exit(1);
-  }
-
-  let sets: Record<string, IcoMoonSet> = {
-    regular: createIconSet(0, "Regular"),
-    thin: createIconSet(1, "Thin"),
-    light: createIconSet(2, "Light"),
-    bold: createIconSet(3, "Bold"),
-    fill: createIconSet(4, "Fill"),
-    duotone: createIconSet(5, "Duotone"),
-  };
-
-  let idx = 0;
-  let errors: string[] = [];
-
-  for (const entry of icons) {
-    let weights =
-      assets[entry.name] ?? (entry.alias ? assets[entry.alias!.name] : null);
-    if (!weights) {
-      console.error(
-        `${chalk.inverse.red(" FAIL ")} ${entry.name} not found in assets`
-      );
-      process.exit(1);
-    }
-
-    for (const [weight, svgString] of Object.entries(weights)) {
-      const canonicalName =
-        weight === "regular" ? entry.name : `${entry.name}-${weight}`;
-      const canonicalAlias = entry.alias
-        ? weight === "regular"
-          ? entry.alias.name
-          : `${entry.alias.name}-${weight}`
-        : null;
-      try {
-        const paths = await getPaths(canonicalName, svgString);
-        const isMulticolor = weight === "duotone";
-
-        const icon: IcoMoonIcon = {
-          id: idx,
-          paths,
-          grid: 0,
-          attrs: isMulticolor ? DUOTONE_ATTRS : BASE_ATTRS,
-          isMulticolor,
-          isMulticolor2: isMulticolor,
-          tags: [canonicalName],
-          colorPermutations: isMulticolor
-            ? DUOTONE_COLOR_PERMUTATIONS
-            : undefined,
-        };
-        sets[weight].icons.push(icon);
-
-        const selection: IcoMoonGlyphEntry = {
-          id: idx,
-          order: idx,
-          name: canonicalName + (canonicalAlias ? `,${canonicalAlias}` : ""),
-          code: entry.codepoint,
-          tempChar: String.fromCharCode(entry.codepoint),
-          ligatures: weight === "duotone" ? undefined : canonicalName,
-        };
-        sets[weight].selection.push(selection);
-      } catch (e) {
-        errors.push(e.message);
+  exec(
+    "git submodule update --remote --init --force --recursive",
+    async (err, _stdout, stderr) => {
+      if (err) {
+        console.error(`${chalk.inverse.red(" ERR ")} ${err.message}`);
+        process.exit(1);
       }
+
+      if (stderr) {
+        console.error(`${chalk.inverse.red(" ERR ")} ${stderr}`);
+        process.exit(1);
+      }
+
+      console.info(
+        `${chalk.inverse.green(" OK ")} Updated submodule @phosphor-icons/core`
+      );
+
+      const assets = readAssetsFromDisk();
+      if (!verifyIcons(assets)) {
+        process.exit(1);
+      }
+
+      let sets: Record<string, IcoMoonSet> = {
+        regular: createIconSet(0, "Regular"),
+        thin: createIconSet(1, "Thin"),
+        light: createIconSet(2, "Light"),
+        bold: createIconSet(3, "Bold"),
+        fill: createIconSet(4, "Fill"),
+        duotone: createIconSet(5, "Duotone"),
+      };
+
+      let idx = 0;
+      let errors: string[] = [];
+
+      for (const entry of icons) {
+        let weights =
+          assets[entry.name] ??
+          ((entry as any).alias ? assets[(entry as any).alias!.name] : null);
+        if (!weights) {
+          console.error(
+            `${chalk.inverse.red(" FAIL ")} ${entry.name} not found in assets`
+          );
+          process.exit(1);
+        }
+
+        for (const [weight, svgString] of Object.entries(weights)) {
+          const canonicalName =
+            weight === "regular" ? entry.name : `${entry.name}-${weight}`;
+          const canonicalAlias = (entry as any).alias
+            ? weight === "regular"
+              ? (entry as any).alias.name
+              : `${(entry as any).alias.name}-${weight}`
+            : null;
+          try {
+            const paths = await getPaths(canonicalName, svgString);
+            const isMulticolor = weight === "duotone";
+
+            const icon: IcoMoonIcon = {
+              id: idx,
+              paths,
+              grid: 0,
+              attrs: isMulticolor ? DUOTONE_ATTRS : BASE_ATTRS,
+              isMulticolor,
+              isMulticolor2: isMulticolor,
+              tags: [canonicalName],
+              colorPermutations: isMulticolor
+                ? DUOTONE_COLOR_PERMUTATIONS
+                : undefined,
+            };
+            sets[weight].icons.push(icon);
+
+            const selection: IcoMoonGlyphEntry = {
+              id: idx,
+              order: idx,
+              name:
+                canonicalName + (canonicalAlias ? `,${canonicalAlias}` : ""),
+              code: entry.codepoint,
+              tempChar: String.fromCharCode(entry.codepoint),
+              ligatures: weight === "duotone" ? undefined : canonicalName,
+            };
+            sets[weight].selection.push(selection);
+          } catch (e) {
+            errors.push(e.message);
+          }
+        }
+
+        idx++;
+        console.info(`${chalk.inverse.green(" DONE ")} ${entry.name}`);
+      }
+
+      project.iconSets.push(...Object.values(sets));
+
+      if (errors.length > 0) {
+        console.error(
+          `${chalk.inverse.red(" FAIL ")} ${errors.length} errors encountered`
+        );
+
+        console.group();
+        for (const msg of errors) {
+          console.error(msg);
+        }
+        console.groupEnd();
+        process.exit(1);
+      } else {
+        console.info(
+          `${chalk.inverse.green(" DONE ")} ${icons.length} icons processed`
+        );
+      }
+
+      fs.writeFileSync(
+        path.join(SRC_PATH, "Phosphor.json"),
+        JSON.stringify(project)
+      );
     }
-
-    idx++;
-    console.info(`${chalk.inverse.green(" DONE ")} ${entry.name}`);
-  }
-
-  project.iconSets.push(...Object.values(sets));
-
-  if (errors.length > 0) {
-    console.error(
-      `${chalk.inverse.red(" FAIL ")} ${errors.length} errors encountered`
-    );
-
-    console.group();
-    for (const msg of errors) {
-      console.error(msg);
-    }
-    console.groupEnd();
-    process.exit(1);
-  } else {
-    console.info(
-      `${chalk.inverse.green(" DONE ")} ${icons.length} icons processed`
-    );
-  }
-
-  fs.writeFileSync(
-    path.join(SRC_PATH, "Phosphor.json"),
-    JSON.stringify(project)
   );
 })();
 

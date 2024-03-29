@@ -9,8 +9,8 @@ export const FONTS_PATH = path.join(SRC_PATH, "fonts");
 export const WEIGHTS = Object.values(IconStyle);
 
 export const ALIASES = icons.reduce<Record<string, string>>((acc, curr) => {
-  if (curr.alias) {
-    acc[curr.name] = curr.alias.name;
+  if ((curr as any).alias) {
+    acc[curr.name] = (curr as any).alias.name;
   }
   return acc;
 }, {});

@@ -37,7 +37,7 @@ import {
       }
 
       await transformDuotoneStylesheet(icons);
-      await includeAliases();
+      // await includeAliases();
     }
   );
 })();
