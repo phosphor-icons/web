@@ -37,7 +37,8 @@ We use a similar approach as many other icon sets out there, providing icons as 
 </html>
 ```
 
-> **Note:** You can import as many or as few weights as needed. Only imported weights will match and render as icons.
+> [!NOTE]
+> You can import as many or as few weights as needed. Only imported weights will match and render as icons.
 
 ### Weights
 
@@ -66,7 +67,8 @@ If you intend to use all 6 weights, they can be made available by including the 
 <i class="ph ph-sunglasses"></i>
 ```
 
-> **NOTE:** Though assets will be cached for subsequent loads, this will bring in around 3MB of fonts and CSS, and may have impact on page load speed.
+> [!WARNING]
+> Though assets will be cached for subsequent loads, this will bring in around 3MB of fonts and CSS, and may have impact on page load speed.
 
 ### Modules
 
@@ -102,7 +104,8 @@ Since the icons are just text under the hood, they can be colored and styled wit
 <i class="ph-bold ph-skull green"></i>
 ```
 
-> **Note:** Overriding the `font-family`, `font-style`, `font-weight`, `font-variant`, or `text-transform` may break the icons and render unprintable characters. Don't do it. Additionally, all weights use the `:before` pseudoelement to inject the font glyph, so overriding this property in icon classes can break them. The `duotone` weight also uses the `:after` pseudoelement, so it is best not to modify either when styling icons.
+> [!WARNING]
+> Overriding the `font-family`, `font-style`, `font-weight`, `font-variant`, or `text-transform` may break the icons and render unprintable characters. Don't do it. Additionally, all weights use the `:before` pseudoelement to inject the font glyph, so overriding this property in icon classes can break them. The `duotone` weight also uses the `:after` pseudoelement, so it is best not to modify either when styling icons.
 
 <!-- ### Ligatures
 
