@@ -1,8 +1,11 @@
 > **ATTENTION:** As part of a major update, we will be replacing the existing `phosphor-icons` package with `@phosphor-icons/web`. We recommend using the new version, as it has improved performance and significantly smaller bundle size, in addition to having the option to only load the weights you need. Some class names and APIs have changed, so please read the documentation before upgrading. The legacy package will continue to recieve maintenance, but will not be updated with new icons upstream. [Take me to the legacy version ➜](https://github.com/phosphor-icons/web/tree/legacy)
 
-<img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
 
 # @phosphor-icons/web
+
+<!-- BEGIN_LOGO -->
+<img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
+<!-- END_LOGO -->
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
