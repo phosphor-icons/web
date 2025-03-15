@@ -5,6 +5,6 @@ for (const weight of ["regular", "thin", "light", "bold", "fill", "duotone"]) {
   link.rel = "stylesheet";
   link.type = "text/css";
   link.href =
-    "https://unpkg.com/@phosphor-icons/web@2.1.1/src/" + weight + "/style.css";
+    "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/" + weight + "/style.css";
   head.appendChild(link);
 }
