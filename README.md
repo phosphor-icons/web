@@ -29,7 +29,7 @@ We use a similar approach as many other icon sets out there, providing icons as 
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"
     />
   </head>
   <body>
@@ -51,7 +51,7 @@ Phosphor Icons come in 6 weights: `regular`, `thin`, `light`, `bold`, `fill`, an
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
+  href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css"
 />
 ...
 <i class="ph-duotone ph-baseball"></i>
@@ -64,7 +64,7 @@ The URL format is `https://cdn.jsdelivr.net/npm/@phosphor-icons/web@<VERSION>/sr
 If you intend to use all 6 weights, they can be made available by including the library as a script tag, using the base URL:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
 ...
 <i class="ph-light ph-address-book"></i>
 <i class="ph ph-sunglasses"></i>
@@ -121,7 +121,7 @@ All weights aside from `duotone` support ligatures, meaning that in any text usi
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"
     />
   </head>
   <body>
@@ -164,6 +164,7 @@ All weights aside from `duotone` support ligatures, meaning that in any text usi
 - [haruaki07/phosphor-svelte](https://github.com/haruaki07/phosphor-svelte) ▲ Phosphor icons for Svelte apps
 - [IgnaceMaes/ember-phosphor-icons](https://github.com/IgnaceMaes/ember-phosphor-icons) ▲ Phosphor icons for Ember apps
 - [iota-uz/icons](https://github.com/iota-uz/icons) ▲ Phosphor icons as Templ components (Go)
+- [jajuma/phosphorhyva](https://github.com/JaJuMa-GmbH/phosphor-hyva) ▲ Phosphor icons for Magento 2 & Mage-OS with Hyvä Theme
 - [lucagoslar/phosphor-css](https://github.com/lucagoslar/phosphor-css) ▲ CSS wrapper for Phosphor SVG icons
 - [maful/ruby-phosphor-icons](https://github.com/maful/ruby-phosphor-icons) ▲ Phosphor icons for Ruby and Rails applications
 - [meadowsys/phosphor-svgs](https://github.com/meadowsys/phosphor-svgs) ▲ Phosphor icons as Rust string constants
